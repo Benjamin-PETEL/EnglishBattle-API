@@ -1,0 +1,35 @@
+{
+  "name": "englishbattle_back",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "dev": "nodemon index.js",
+    "eslint": "npx eslint './**'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Benjamin-PETEL/EnglishBattle_Back.git"
+  },
+  "author": "Benjamin PETEL",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Benjamin-PETEL/EnglishBattle_Back/issues"
+  },
+  "homepage": "https://github.com/Benjamin-PETEL/EnglishBattle_Back#readme",
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "express": "^4.18.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.14.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-n": "^15.2.0",
+    "eslint-plugin-promise": "^6.0.0",
+    "jest": "^28.0.3",
+    "nodemon": "^2.0.16",
+    "supertest": "^6.2.3"
+  }
+}
