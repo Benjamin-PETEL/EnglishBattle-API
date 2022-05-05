@@ -26,4 +26,6 @@ jobs:
       run: npx eslint './**'
       
     - name: Tests
+      env:
+        PORT: 3000
       run: npm test
