@@ -1,0 +1,26 @@
+name: CD
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  deploy:
+    runs-on: self-hosted
+    environment: deploy
+    strategy:
+      matrix:
+        node-version: [16.x]
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Create environment variables
+      env:
+        PORT: ${{ secrets.PORT }}
+      run: echo "PORT=$PORT" > .env
+
+    - name: Restart project
+      run: pm2 restart Cheatsheets
