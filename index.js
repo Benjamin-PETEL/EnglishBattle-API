@@ -1,5 +1,8 @@
 require('dotenv').config();
 
+const { initVerbs } = require('./verbs/verbService');
+initVerbs();
+
 const app = require('./server.js');
 const port = process.env.PORT;
 

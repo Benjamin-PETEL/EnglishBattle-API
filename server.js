@@ -1,9 +1,8 @@
 const express = require('express');
 
 const app = express();
+const API = '/api';
 
-app.get('/', (req, res) => {
-    res.json({ hello: 'Hello World!' });
-});
+app.use(API + '/verbs', require('./verbs/verbRouter'));
 
 module.exports = app;

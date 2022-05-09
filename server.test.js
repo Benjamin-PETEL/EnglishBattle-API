@@ -1,17 +1,15 @@
 const request = require('supertest');
-const server = require('./server');
+const app = require('./server');
 
-describe('Test endpoints', () => {
-    test('/', (done) => {
-        request(server)
-            .get('/')
-            .expect('Content-Type', /json/)
+describe('Main routing', () => {
+    test('/verbs - get', (done) => {
+        request(app)
+            .get('/api/verbs')
             .expect(200)
             .end((err, res) => {
                 if (err) {
                     return done(err);
                 }
-                expect(res.body.hello).toBe('Hello World!');
                 done();
             });
     });

@@ -17,5 +17,5 @@
         "indent": ["error", 4],
         "eol-last": ["error", "never"]
     },
-    "ignorePatterns": ["LICENSE", "*.json"]
+    "ignorePatterns": ["LICENSE", "*.json", "*.csv"]
 }
