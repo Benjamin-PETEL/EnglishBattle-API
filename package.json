@@ -6,7 +6,7 @@
   "scripts": {
     "test": "jest",
     "dev": "nodemon index.js",
-    "eslint": "npx eslint './**'"
+    "lint": "npx eslint './**'"
   },
   "repository": {
     "type": "git",
@@ -30,6 +30,7 @@
     "eslint-plugin-promise": "^6.0.0",
     "jest": "^28.0.3",
     "nodemon": "^2.0.16",
+    "rewire": "^6.0.0",
     "supertest": "^6.2.3"
   }
 }
