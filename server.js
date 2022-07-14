@@ -17,6 +17,5 @@ app.use((req, res, next) => {
 });
 
 app.use(API + '/verbs', require('./verbs/verbRouter'));
-app.use(API + '/simple', require('./simple/simpleRouter'));
 
 module.exports = app;
