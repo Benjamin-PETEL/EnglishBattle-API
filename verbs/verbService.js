@@ -22,7 +22,12 @@ const _CSVToArray = (data, delimiter = ',', omitFirstRow = false) => {
         .split('\n')
         .map(str => {
             const verbArray = str.split(delimiter);
-            return { baseVerbal: verbArray[0], simplePast: verbArray[3], pastParticipe: verbArray[4] };
+            return {
+                baseVerbal: verbArray[0],
+                simplePast: verbArray[3],
+                pastParticipe: verbArray[4],
+                isRegular: (verbArray[5] === 'true')
+            };
         });
 };
 
