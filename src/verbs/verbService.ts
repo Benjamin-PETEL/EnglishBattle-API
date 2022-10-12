@@ -31,4 +31,4 @@ const _CSVToArray = (data: string, delimiter = ',', omitFirstRow = false) => {
         });
 };
 
-export { initVerbs, getVerbs }
+export { initVerbs, getVerbs };

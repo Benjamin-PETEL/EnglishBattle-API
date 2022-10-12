@@ -1,6 +1,6 @@
 import { app } from './server';
 import dotenv from 'dotenv';
-import { initVerbs } from './verbs/verbService'
+import { initVerbs } from './verbs/verbService';
 
 dotenv.config();
 const PORT = process.env.PORT || 3000;
