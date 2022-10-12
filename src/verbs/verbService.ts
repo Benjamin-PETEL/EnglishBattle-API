@@ -1,7 +1,7 @@
-const fs = require('fs');
+import fs from 'fs';
 
 // Variable containing all the verbs
-let _verbs;
+let _verbs: any[];
 
 const getVerbs = () => {
     return _verbs;
@@ -16,7 +16,7 @@ const initVerbs = () => {
     }
 };
 
-const _CSVToArray = (data, delimiter = ',', omitFirstRow = false) => {
+const _CSVToArray = (data: string, delimiter = ',', omitFirstRow = false) => {
     return data
         .slice(omitFirstRow ? data.indexOf('\n') + 1 : 0)
         .split('\n')
@@ -31,4 +31,4 @@ const _CSVToArray = (data, delimiter = ',', omitFirstRow = false) => {
         });
 };
 
-module.exports = { getVerbs, initVerbs };
+export { initVerbs, getVerbs }
