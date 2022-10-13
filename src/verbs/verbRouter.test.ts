@@ -3,10 +3,11 @@ import express from 'express';
 import { mocked } from 'jest-mock';
 import { verbRouter } from './verbRouter';
 import { getVerbs } from './verbService';
+import { Verb } from '../model/verb.model';
 
 jest.mock('./verbService', () => {
     return {
-        getVerbs: jest.fn().mockImplementation(() => [{ bv: 'go', sp: 'went', pp: 'gone' }])
+        getVerbs: jest.fn().mockImplementation(() => [{ baseVerbal: 'go', simplePast: 'went', pastParticipe: 'gone', isRegular: true }])
     };
 });
 
@@ -17,9 +18,9 @@ describe('verbRouter', () => {
         app.use('/', verbRouter);
     });
 
-    test('#get', (done) => {
+    it('#get', (done) => {
         mocked(getVerbs);
-        const expected = [{ bv: 'go', sp: 'went', pp: 'gone' }];
+        const expected: Verb[] = [{ baseVerbal: 'go', simplePast: 'went', pastParticipe: 'gone', isRegular: true }];
         request(app)
             .get('/')
             .expect('Content-Type', /json/)

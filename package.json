@@ -8,8 +8,8 @@
     "build:prod": "tsc -p tsconfig.build.json",
     "start": "nodemon dist/index.js",
     "start:prod": "node dist/index.js",
-    "test": "jest --watch",
-    "test:prod": "jest",
+    "test:dev": "jest --watch",
+    "test": "jest",
     "lint": "npx eslint ./src/"
   },
   "repository": {

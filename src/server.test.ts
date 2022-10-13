@@ -2,7 +2,7 @@ import request from 'supertest';
 import { app } from './server';
 
 describe('Main routing', () => {
-    test('/verbs - get', (done) => {
+    it('/verbs - get', (done) => {
         request(app)
             .get('/api/verbs')
             .expect(200)

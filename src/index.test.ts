@@ -1,6 +1,6 @@
 import { PORT } from './index';
 
-describe.only('index', () => {
+describe('index', () => {
     
     it('dotenv', () => {
         expect(PORT).toBe(3000);

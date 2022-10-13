@@ -28,4 +28,4 @@ jobs:
     - name: Tests
       env:
         PORT: 3000
-      run: 'npm run test:prod'
+      run: npm run test

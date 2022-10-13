@@ -1,13 +1,14 @@
 import fs from 'fs';
+import { Verb } from '../model/verb.model';
 
 // Variable containing all the verbs
-let _verbs: any[];
+let _verbs: Verb[];
 
-const getVerbs = () => {
+const getVerbs = (): Verb[] => {
     return _verbs;
 };
 
-const initVerbs = () => {
+const initVerbs = (): void => {
     try {
         const data = fs.readFileSync('./resources/english_verbs.csv');
         _verbs = _CSVToArray(data.toString(), ',', true);
@@ -16,7 +17,7 @@ const initVerbs = () => {
     }
 };
 
-const _CSVToArray = (data: string, delimiter = ',', omitFirstRow = false) => {
+const _CSVToArray = (data: string, delimiter = ',', omitFirstRow = false): Verb[] => {
     return data
         .slice(omitFirstRow ? data.indexOf('\n') + 1 : 0)
         .split('\n')
