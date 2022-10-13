@@ -1,4 +1,4 @@
-const verbService = require('./verbService');
+import * as verbService from'./verbService';
 
 describe('VerbService', () => {
     test('Integration: initVerbs + _CSVToArray', () => {

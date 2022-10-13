@@ -1,5 +1,5 @@
 import express, {Express, Request, Response, NextFunction} from 'express';
-import { verbeRouter } from './verbs/verbRouter';
+import { verbRouter } from './verbs/verbRouter';
 
 const API = '/api';
 
@@ -18,4 +18,4 @@ app.use((req: Request, res: Response, next: NextFunction) => {
     }
 });
 
-app.use(API + '/verbs', verbeRouter);
+app.use(API + '/verbs', verbRouter);

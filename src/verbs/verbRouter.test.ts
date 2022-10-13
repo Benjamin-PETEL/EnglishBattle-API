@@ -1,20 +1,24 @@
-const request = require('supertest');
-const express = require('express');
-const router = require('./verbRouter');
-const verbService = require('./verbService');
+import request from 'supertest';
+import express from 'express';
+import { mocked } from 'jest-mock';
+import { verbRouter } from './verbRouter';
+import { getVerbs } from './verbService';
 
-describe('verbs endpoints', () => {
+jest.mock('./verbService', () => {
+    return {
+        getVerbs: jest.fn().mockImplementation(() => [{ bv: 'go', sp: 'went', pp: 'gone' }])
+    };
+});
+
+describe('verbRouter', () => {
     const app = express();
 
     beforeAll(() => {
-        app.use('/', router);
+        app.use('/', verbRouter);
     });
 
-    test('get', (done) => {
-        // mock verbService
-        verbService.getVerbs = jest.fn(() => {
-            return [{ bv: 'go', sp: 'went', pp: 'gone' }];
-        });
+    test('#get', (done) => {
+        mocked(getVerbs);
         const expected = [{ bv: 'go', sp: 'went', pp: 'gone' }];
         request(app)
             .get('/')
